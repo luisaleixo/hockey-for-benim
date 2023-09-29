@@ -8,7 +8,7 @@ const HomePage = () => {
             <br/>
             <p>📣 Vamos ajudar o desenvolvimento do hóquei em patins em Cotonou em Benim, África. 🏒</p>
             <br/>
-            <p>👉 Segue esta aventura <a href="gofund.me/7789f64c">aqui</a> 👈</p>
+            <p>👉 Segue esta aventura <a href="https://gofund.me/7789f64c">aqui</a> 👈</p>
         </div>
     )
     
