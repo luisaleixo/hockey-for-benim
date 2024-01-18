@@ -6,16 +6,26 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import { Link, Button as bt, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
-import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import {
+  Link,
+  Button as bt,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+} from "react-scroll";
+import {
+  createTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+} from "@mui/material/styles";
 
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
@@ -54,36 +64,37 @@ const NavBar = () => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         Conteúdo
       </Typography>
       <Divider />
       <List>
         {pages.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              {/* <ListItemText primary={item} /> */}
-              <Link 
-                  activeClass="active" 
-                  to={item}
-                  spy={true} 
-                  smooth={true} 
-                  // offset={64} 
-                  duration={1000}
-                  onClick={handleDrawerToggle}
-                >
-                  <ThemeProvider theme={theme}><Typography>{item}</Typography></ThemeProvider>
-                </Link>
-            </ListItemButton>
-          </ListItem>
-
+          <Link
+            activeClass="active"
+            to={item}
+            spy={true}
+            smooth={true}
+            // offset={64}
+            duration={1000}
+            onClick={handleDrawerToggle}
+          >
+            <ListItem key={item} disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ThemeProvider theme={theme}>
+                  <Typography>{item}</Typography>
+                </ThemeProvider>
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
     </Box>
   );
 
-  const container = window !== undefined ? () => window.document.body : undefined;
+  const container =
+    window !== undefined ? () => window.document.body : undefined;
 
   const gradientStyle = {
     background:
@@ -92,127 +103,143 @@ const NavBar = () => {
 
   return (
     <>
-    {/* <CssBaseline /> */}
-    <ElevationScroll>
-    <AppBar sx={gradientStyle}>
-      <Container maxWidth="lg">
-        <Toolbar >
-          {/* Mobile */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", lg: "none" } }}>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { lg: 'none' } }}
-            >
-              <MenuIcon />
-            </IconButton>
-          </Box>
-          <Box
-            sx={{
-              display: { xs: "flex", lg: "none" },
-              justifyContent: "right",
-              alignItems: "center",
-              width: "100%",
-            }}
-          >
-            <img
-              src="/logo.png" // Adjust the path based on your actual folder structure
-              alt="Logo"
-              style={{
-                maxWidth: "50px", // Adjust the size as needed
-                marginRight: "2px",
-                flexGrow: 1,
-              }}
-            />
-          </Box>
-
-          {/* Desktop */}
-          <Box
-            sx={{
-              display: { xs: "none", lg: "flex" },
-              justifyContent: "space-between",
-              alignItems: "center",
-              width: "100%",
-            }}
-          >
-            <Box
-              sx={{
-                display: { xs: "none", lg: "flex" },
-                flex: "0 0 40%",
-                justifyContent: "space-between",
-              }}
-            >
-              {pages.slice(0, 3).map((page) => (
-                <Link 
-                  activeClass="active" 
-                  to={page}
-                  spy={true} 
-                  smooth={true} 
-                  // offset={64} 
-                  duration={1000} 
+      {/* <CssBaseline /> */}
+      <ElevationScroll>
+        <AppBar sx={gradientStyle}>
+          <Container maxWidth="lg">
+            <Toolbar>
+              {/* Mobile */}
+              <Box sx={{ flexGrow: 1, display: { xs: "flex", lg: "none" } }}>
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                  sx={{ mr: 2, display: { lg: "none" } }}
                 >
-                  <ThemeProvider theme={theme}><Typography>{page}</Typography></ThemeProvider>
-                </Link>
-              ))}
-            </Box>
+                  <MenuIcon />
+                </IconButton>
+              </Box>
+              <Box
+                sx={{
+                  display: { xs: "flex", lg: "none" },
+                  justifyContent: "right",
+                  alignItems: "center",
+                  width: "100%",
+                }}
+              >
+                <img
+                  src="/logo.png" // Adjust the path based on your actual folder structure
+                  alt="Logo"
+                  style={{
+                    maxWidth: "50px", // Adjust the size as needed
+                    marginRight: "2px",
+                    flexGrow: 1,
+                  }}
+                />
+              </Box>
 
-            <Box sx={{ flex: "0 0 10%", textAlign: "center", display: "flex", alignItems: "center" }}>
-              <img src="logo.png" alt="Logo" style={{ maxWidth: "100%", maxHeight: '55px' }} />
-            </Box>
-
-            <Box
-              sx={{
-                display: { xs: "none", lg: "flex" },
-                flex: "0 0 40%",
-                justifyContent: "space-between",
-              }}
-            >
-              {pages.slice(3).map((page) => (
-                <Link 
-                  activeClass="active" 
-                  to={page} 
-                  spy={true} 
-                  smooth={true} 
-                  duration={1000} 
+              {/* Desktop */}
+              <Box
+                sx={{
+                  display: { xs: "none", lg: "flex" },
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  width: "100%",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: { xs: "none", lg: "flex" },
+                    flex: "0 0 40%",
+                    justifyContent: "space-between",
+                  }}
                 >
-                  {page}
-                </Link>
-              ))}
-            </Box>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
-    </ElevationScroll>
+                  {pages.slice(0, 3).map((page) => (
+                    <Link
+                      activeClass="active"
+                      to={page}
+                      spy={true}
+                      smooth={true}
+                      // offset={64}
+                      duration={1000}
+                    >
+                      <ThemeProvider theme={theme}>
+                        <Typography>{page}</Typography>
+                      </ThemeProvider>
+                    </Link>
+                  ))}
+                </Box>
 
-    <nav>
-      <Drawer
-        container={container}
-        variant="temporary"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        ModalProps={{
-          keepMounted: true, // Better open performance on mobile.
-        }}
-        sx={{
-          display: { xs: 'block', sm: 'none' },
-          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-        }}
-      >
-        {drawer}
-      </Drawer>
-    </nav>
+                <Box
+                  sx={{
+                    flex: "0 0 10%",
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <img
+                    src="logo.png"
+                    alt="Logo"
+                    style={{ maxWidth: "100%", maxHeight: "55px" }}
+                  />
+                </Box>
 
-    {pages.map((page, index) =>
-      <Element name={page} className="element">
-        <ThemeProvider theme={theme}>
-          <Typography variant='h3'>{page}</Typography>
-        </ThemeProvider>
-      </Element>
-    )}
-  </>
+                <Box
+                  sx={{
+                    display: { xs: "none", lg: "flex" },
+                    flex: "0 0 40%",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  {pages.slice(3).map((page) => (
+                    <Link
+                      activeClass="active"
+                      to={page}
+                      spy={true}
+                      smooth={true}
+                      duration={1000}
+                    >
+                      {page}
+                    </Link>
+                  ))}
+                </Box>
+              </Box>
+            </Toolbar>
+          </Container>
+        </AppBar>
+      </ElevationScroll>
+
+      <nav>
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </nav>
+
+      {pages.map((page, index) => (
+        <Element name={page} className="element">
+          <ThemeProvider theme={theme}>
+            <Typography variant="h3">{page}</Typography>
+          </ThemeProvider>
+        </Element>
+      ))}
+    </>
   );
 };
 export default NavBar;
