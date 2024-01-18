@@ -7,8 +7,30 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
+import CssBaseline from '@mui/material/CssBaseline';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import { Link, Button as bt, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
+import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
+
+let theme = createTheme();
+theme = responsiveFontSizes(theme);
+
+interface Props {
+  children: React.ReactElement;
+}
+
+function ElevationScroll(props: Props) {
+  const { children } = props;
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+  });
+
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  });
+}
 
 const pages = [
   "A nossa História",
@@ -38,11 +60,14 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="static" sx={gradientStyle}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+    <>
+    {/* <CssBaseline /> */}
+    <ElevationScroll>
+    <AppBar sx={gradientStyle}>
+      <Container maxWidth="lg">
+        <Toolbar >
           {/* Mobile */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", xl: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", lg: "none" } }}>
             <IconButton
               size="large"
               aria-controls="menu-appbar"
@@ -67,7 +92,7 @@ const NavBar = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", xl: "none" },
+                display: { xs: "block", lg: "none" },
               }}
             >
               {pages.map((page) => (
@@ -79,7 +104,7 @@ const NavBar = () => {
           </Box>
           <Box
             sx={{
-              display: { xs: "flex", xl: "none" },
+              display: { xs: "flex", lg: "none" },
               justifyContent: "right",
               alignItems: "center",
               width: "100%",
@@ -99,7 +124,7 @@ const NavBar = () => {
           {/* Desktop */}
           <Box
             sx={{
-              display: { xs: "none", xl: "flex" },
+              display: { xs: "none", lg: "flex" },
               justifyContent: "space-between",
               alignItems: "center",
               width: "100%",
@@ -107,63 +132,64 @@ const NavBar = () => {
           >
             <Box
               sx={{
-                display: { xs: "none", xl: "flex" },
+                display: { xs: "none", lg: "flex" },
                 flex: "0 0 40%",
                 justifyContent: "space-between",
               }}
             >
               {pages.slice(0, 3).map((page) => (
-                <Button
-                  key={page}
-                  onClick={() => handleCloseNavMenu()} // Assuming handleCloseNavMenu is a function
-                  sx={{
-                    mx: 1,
-                    color: "white",
-                    textTransform: "none",
-                    fontSize: "21px",
-                    fontWeight: 700,
-                    letterSpacing: "0em",
-                    textAlign: "center",
-                  }}
+                <Link 
+                  activeClass="active" 
+                  to={page}
+                  spy={true} 
+                  smooth={true} 
+                  // offset={64} 
+                  duration={500} 
+                  // onSetActive={handleSetActive}
                 >
-                  {page}
-                </Button>
+                  <ThemeProvider theme={theme}><Typography>{page}</Typography></ThemeProvider>
+                </Link>
               ))}
             </Box>
 
-            <Box sx={{ flex: "0 0 10%", textAlign: "center" }}>
-              <img src="logo.png" alt="Logo" style={{ maxWidth: "100%" }} />
+            <Box sx={{ flex: "0 0 10%", textAlign: "center", display: "flex", alignItems: "center" }}>
+              <img src="logo.png" alt="Logo" style={{ maxWidth: "100%", maxHeight: '55px' }} />
             </Box>
 
             <Box
               sx={{
-                display: { xs: "none", xl: "flex" },
+                display: { xs: "none", lg: "flex" },
                 flex: "0 0 40%",
                 justifyContent: "space-between",
               }}
             >
               {pages.slice(3).map((page) => (
-                <Button
-                  key={page}
-                  onClick={() => handleCloseNavMenu()} // Assuming handleCloseNavMenu is a function
-                  sx={{
-                    mx: 1,
-                    color: "white",
-                    textTransform: "none",
-                    fontSize: "21px",
-                    fontWeight: 700,
-                    letterSpacing: "0em",
-                    textAlign: "center",
-                  }}
+                <Link 
+                  activeClass="active" 
+                  to={page} 
+                  spy={true} 
+                  smooth={true} 
+                  duration={500} 
+                  // onSetActive={handleSetActive}
                 >
                   {page}
-                </Button>
+                </Link>
               ))}
             </Box>
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
+    </ElevationScroll>
+
+    {pages.map((page, index) =>
+      <Element name={page} className="element">
+        <ThemeProvider theme={theme}>
+          <Typography variant='h3'>{page}</Typography>
+        </ThemeProvider>
+      </Element>
+    )}
+  </>
   );
 };
 export default NavBar;
