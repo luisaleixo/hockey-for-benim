@@ -26,6 +26,7 @@ import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
+import LandingPage from "./landing/LandingPage";
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
@@ -232,13 +233,26 @@ const NavBar = () => {
         </Drawer>
       </nav>
 
-      {pages.map((page, index) => (
+      {/* {pages.map((page, index) => (
         <Element name={page} className="element">
           <ThemeProvider theme={theme}>
             <Typography variant="h3">{page}</Typography>
           </ThemeProvider>
         </Element>
-      ))}
+      ))} */}
+      {pages.map((page, index) => {
+        if (index === 0)
+          return <LandingPage name={page} className="element" theme={theme} />;
+        else {
+          return (
+            <Element name={page} className="element">
+              <ThemeProvider theme={theme}>
+                <Typography variant="h3">{page}</Typography>
+              </ThemeProvider>
+            </Element>
+          );
+        }
+      })}
     </>
   );
 };
