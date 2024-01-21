@@ -242,7 +242,7 @@ const NavBar = () => {
       ))} */}
       {pages.map((page, index) => {
         if (index === 0)
-          return <LandingPage name={page} className="element" theme={theme} />;
+          return <LandingPage name={page} className="element" theme={theme} pages={pages} />;
         else {
           return (
             <Element name={page} className="element">
