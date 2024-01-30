@@ -1,11 +1,4 @@
-import {
-  Box,
-  Theme,
-  ThemeProvider,
-  Typography,
-  Button,
-  IconButton,
-} from "@mui/material";
+import { Box, Theme, ThemeProvider, Typography, Button } from "@mui/material";
 import { SxProps } from "@mui/system";
 import React from "react";
 import {
@@ -16,8 +9,6 @@ import {
   animateScroll as scroll,
   scrollSpy,
 } from "react-scroll";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
 
 const LandingPage: React.FC<{
   name: string;
@@ -25,10 +16,6 @@ const LandingPage: React.FC<{
   theme: Theme;
   pages: Array<string>;
 }> = (props) => {
-  const facebookLink =
-    "https://www.facebook.com/profile.php?id=100095082815013";
-  const instagramLink = "https://www.instagram.com/hockeyforbenim/";
-
   const backgroundImageStyle = {
     backgroundImage: `url(/home/landing.png)`, // Adjust the path to your image accordingly
     backgroundSize: "cover",
@@ -76,16 +63,31 @@ const LandingPage: React.FC<{
     padding: "1%",
   };
 
+  const boxObjectivesImageStyle = {
+    flex: "1 0 30%",
+    padding: "1 0% 1% 0%",
+  };
+
+  const boxObjectivesListStyle = {
+    flex: "1 0 60%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center", // Center horizontally
+    justifyContent: "center", // Center vertically
+    padding: { xs: "1% 0% 1% 0%", lg: "1% 0% 1% 10%" },
+  };
+
   const redText = { color: "red", fontWeight: "bold" };
   const greenText = { color: "green", fontWeight: "bold" };
   const yellowText = { color: "#ffbb00", fontWeight: "bold" };
+  const whiteText = { color: "white", fontWeight: "bold" };
 
-  const backgroundImageStyleBottom = {
-    backgroundImage: `linear-gradient(rgba(0, 135, 81, 0.5), rgba(0, 135, 81, 0.5)), url(/home/landing.png)`,
+  const backgroundImageJuntaCausa = {
+    backgroundImage: `linear-gradient(rgba(232, 17, 45, 0.7), rgba(232, 17, 45, 0.7)), url(/home/causa.png)`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    height: "40vh", // Make the Box fill the entire screen height
+    height: "70vh", // Make the Box fill the entire screen height
     width: "100%", // Make the Box fill the entire screen width
     display: "flex",
     flexDirection: "column",
@@ -94,25 +96,18 @@ const LandingPage: React.FC<{
     padding: "5% 0% 5% 0%", // Padding at the bottom
   };
 
-  const backgroundStyleBottom = {
-    display: { xs: "none", lg: "flex" },
-    backgroundColor: "#008751",
-    height: "30vh", // Make the Box fill the entire screen height
-    width: "100%", // Make the Box fill the entire screen width
-    flexDirection: "row",
-    justifyContent: "space-around",
-    paddingBottom: "5%", // Padding at the bottom
+  const boxCausaStyle = {
+    flex: "1 0 50%",
+    padding: "10% 0% 10% 0%",
   };
 
-  const backgroundStyleBottomMobile = {
-    display: { xs: "flex", lg: "none" },
-    backgroundColor: "#008751",
-    height: "30vh", // Make the Box fill the entire screen height
-    width: "100%", // Make the Box fill the entire screen width
-    flexDirection: "row",
-    justifyContent: "center",
-    // alignContent: "center",
-    padding: "5% 0% 5% 0%", // Padding at the bottom
+  const boxCausaFormStyle = {
+    flex: "1 0 50%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center", // Center horizontally
+    justifyContent: "center", // Center vertically
+    padding: { xs: "1% 0% 1% 0%", lg: "1% 0% 1% 10%" },
   };
 
   return (
@@ -162,11 +157,12 @@ const LandingPage: React.FC<{
                 <span style={greenText}>for</span>{" "}
                 <span style={yellowText}>Benim</span>” destina-se a apoiar, a
                 longo-prazo, o desenvolvimento da modalidade de hóquei em patins
-                em Cotonou, cidade portuária no Benim, África. Nesta cidade
-                existe uma cumonidade de cerca de 100 crianças, com idades entre
-                os 8 e os 13 anos, carenciadas em termos socio-económicos, que
-                encontram no hóqeui em patins a energia e a motivação para
-                superarem os obstáculos que todos os dias enfrentam.
+                em Cotonou, cidade portuária no Benim, África. <br />
+                Nesta cidade existe uma cumonidade de cerca de 100 crianças, com
+                idades entre os 8 e os 13 anos, carenciadas em termos
+                socio-económicos, que encontram no hóqeui em patins a energia e
+                a motivação para superarem os obstáculos que todos os dias
+                enfrentam.
               </Typography>
             </ThemeProvider>
           </Box>
@@ -206,169 +202,91 @@ const LandingPage: React.FC<{
             </Box>
           </ThemeProvider>
         </Box>
-      </Element>
-
-      <Element name={"bottom"}>
-        <Box sx={backgroundImageStyleBottom}>
-          <ThemeProvider theme={props.theme}>
-            <Typography variant="h2" color="white">
-              <strong>#LetThemRoll</strong>
-            </Typography>
-          </ThemeProvider>
-          <Box>
-            <br />
-            <Link
-              activeClass="active"
-              to="Doações"
-              spy={true}
-              smooth={true}
-              // offset={64}
-              duration={1000}
-              // onClick={handleDrawerToggle}
-            >
-              <Button variant="contained" color="error" size="large">
-                <strong>DOAR AQUI!</strong>
-              </Button>
-            </Link>
+        <Box sx={containerStyle}>
+          <Box sx={boxObjectivesImageStyle}>
+            <img src="home/objectives.png" style={{ maxWidth: "100%" }} />
           </Box>
-        </Box>
-
-        {/* Mobile */}
-        <Box sx={backgroundStyleBottomMobile}>
-          <Box sx={{ paddingTop: "2%", textAlign: "center" }}>
-            <Box
-              sx={{
-                // display: { xs: "flex", lg: "none" },
-                justifyContent: "right",
-                alignItems: "center",
-                width: "100%",
-              }}
-            >
-              <img
-                src="/logo.png" // Adjust the path based on your actual folder structure
-                alt="Logo"
-                style={{
-                  maxHeight: "10vh", // Adjust the size as needed
-                }}
-              />
-            </Box>
-            <br />
+          <Box sx={boxObjectivesListStyle}>
             <ThemeProvider theme={props.theme}>
-              <strong>
-                <span style={redText}>Hockey</span>{" "}
-                <span style={{ color: "white" }}>for</span>{" "}
-                <span style={yellowText}>Benim</span>
-              </strong>
-            </ThemeProvider>
-            <Box
-              sx={{
-                marginTop: "10%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "100%",
-              }}
-            >
-              <IconButton href={facebookLink}>
-                <FacebookIcon />
-              </IconButton>
-              <IconButton href={instagramLink}>
-                <InstagramIcon />
-              </IconButton>
-            </Box>
-          </Box>
-        </Box>
-
-        {/* Desktop */}
-        <Box sx={backgroundStyleBottom}>
-          <Box sx={{ paddingTop: "2%" }}>
-            <Box
-              sx={{
-                // display: { xs: "flex", lg: "none" },
-                justifyContent: "right",
-                alignItems: "center",
-                width: "100%",
-              }}
-            >
-              <img
-                src="/logo.png" // Adjust the path based on your actual folder structure
-                alt="Logo"
-                style={{
-                  maxWidth: "5vw", // Adjust the size as needed
-                  marginRight: "2px",
-                  flexGrow: 1,
-                }}
-              />
-            </Box>
-            <br />
-            <ThemeProvider theme={props.theme}>
-              <strong>
-                <span style={redText}>Hockey</span>{" "}
-                <span style={{ color: "white" }}>for</span>{" "}
-                <span style={yellowText}>Benim</span>
-              </strong>
-            </ThemeProvider>
-            <Box
-              sx={{
-                marginTop: "10%",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "100%",
-              }}
-            >
-              <IconButton href={facebookLink}>
-                <FacebookIcon />
-              </IconButton>
-              <IconButton href={instagramLink}>
-                <InstagramIcon />
-              </IconButton>
-            </Box>
-          </Box>
-          <Box sx={{ paddingTop: "2%" }}>
-            <ThemeProvider theme={props.theme}>
-              <Typography variant="h6" color="white">
-                <strong>FALA CONNOSCO</strong>
+              <Typography variant="h4">
+                <span style={greenText}>Os objetivos do nosso projeto:</span>
               </Typography>
-              <br />
-              <Typography variant="subtitle2" color="white">
-                <strong>hockeyforbenim@gmail.com</strong>
-              </Typography>
-            </ThemeProvider>
-          </Box>
-          <Box sx={{ paddingTop: "2%" }}>
-            <ThemeProvider theme={props.theme}>
-              <Typography variant="h6" color="white">
-                <strong>EXPLORE</strong>
-              </Typography>
-              <ul style={{ listStyle: "none", paddingLeft: 0 }}>
-                {props.pages.map((page) => (
+              <ul>
+                <Typography variant="h6">
                   <li>
-                    <Link
-                      activeClass="active"
-                      to={page}
-                      spy={true}
-                      smooth={true}
-                      // offset={64}
-                      duration={1000}
-                      // onClick={handleDrawerToggle}
-                    >
-                      <Typography color="white">{page}</Typography>
-                    </Link>
+                    Angariação de material específico de hóquei em patins,
+                    indumentária, medicamentos, alimentos e fundos.
                   </li>
-                ))}
+                </Typography>
+                <br />
+                <Typography variant="h6">
+                  <li>
+                    Estabelecimento de programas de apadrinhamento à distância
+                    para as crianças praticantes da modalidade em Cotonou.
+                  </li>
+                </Typography>
+                <br />
+                <Typography variant="h6">
+                  <li>
+                    Promoção de jogos solidários de hóquei em patins que
+                    promovam o desenvolvimento da modalidade no Benim.
+                  </li>
+                </Typography>
+                <br />
+                <Typography variant="h6">
+                  <li>
+                    Implentação de programas de intercâmbio do Benim para
+                    Portugal.
+                  </li>
+                </Typography>
+                <br />
               </ul>
             </ThemeProvider>
           </Box>
-          <Box sx={{ paddingTop: "2%" }}>
-            <ThemeProvider theme={props.theme}>
-              <Typography variant="h6" color="white">
-                <strong>Envia mensagem!</strong>
-              </Typography>
-            </ThemeProvider>
-            <br />
-            <Button variant="contained" color="error">
-              <strong>Let's talk!</strong>
-            </Button>
+        </Box>
+        <Box sx={backgroundImageJuntaCausa}>
+          <Box sx={containerStyle}>
+            <Box sx={boxCausaStyle}>
+              <ThemeProvider theme={props.theme}>
+                <Typography variant="h4" sx={whiteText}>
+                  Junta-te à nossa causa!
+                </Typography>
+                <Typography
+                  variant="h6"
+                  style={{ textAlign: "justify", color: "white" }}
+                >
+                  <br />A nossa equipa está sempre de braços abertos a pessoas
+                  que queriam ajudar e a lutar pela nossa causa. O grande
+                  objetivo é entregar sonhos e levar a modalida que tanto
+                  gostamos ao Benim.
+                  <br />
+                  <br />
+                  Envia mensagem e descobre como podes ajudar!
+                </Typography>
+              </ThemeProvider>
+              <br />
+              <Box sx={{display: "flex", flexDirection: "row", alignItems: "flex-end"}}>
+                <img src="home/causa_text.jpg" style={{ maxWidth: "50%" }} />
+                <Box style={{marginLeft: "2%"}}>
+                  <br />
+                  <Link
+                    activeClass="active"
+                    to="Doações"
+                    spy={true}
+                    smooth={true}
+                    // offset={64}
+                    duration={1000}
+                    // onClick={handleDrawerToggle}
+                  >
+                    <Button variant="contained" color="error" size="large">
+                      <strong>DOAR AQUI!</strong>
+                    </Button>
+                  </Link>
+                </Box>
+              </Box>
+            </Box>
+            <Box sx={boxCausaFormStyle}>
+            </Box>
           </Box>
         </Box>
       </Element>

@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+custom-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.link-text {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.custom-link.active .link-text {
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 1);
+}

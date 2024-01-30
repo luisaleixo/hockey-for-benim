@@ -27,6 +27,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import LandingPage from "./landing/LandingPage";
+import BottomPage from "./bottom/BottomPage";
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
@@ -130,11 +131,10 @@ const NavBar = () => {
                 }}
               >
                 <img
-                  src="/logo.png" // Adjust the path based on your actual folder structure
+                  src="/logo.png"
                   alt="Logo"
                   style={{
-                    maxWidth: "50px", // Adjust the size as needed
-                    marginRight: "2px",
+                    maxWidth: "60px",
                     flexGrow: 1,
                   }}
                 />
@@ -158,15 +158,16 @@ const NavBar = () => {
                 >
                   {pages.slice(0, 3).map((page) => (
                     <Link
+                      key={page}
                       activeClass="active"
                       to={page}
                       spy={true}
                       smooth={true}
-                      // offset={64}
-                      duration={1000}
+                      // duration={1000}
+                      className="custom-link"
                     >
                       <ThemeProvider theme={theme}>
-                        <Typography>{page}</Typography>
+                        <Typography className="link-text"><strong>{page}</strong></Typography>
                       </ThemeProvider>
                     </Link>
                   ))}
@@ -196,13 +197,17 @@ const NavBar = () => {
                 >
                   {pages.slice(3).map((page) => (
                     <Link
+                      key={page}
                       activeClass="active"
                       to={page}
                       spy={true}
                       smooth={true}
-                      duration={1000}
+                      // duration={1000}
+                      className="custom-link"
                     >
-                      {page}
+                      <ThemeProvider theme={theme}>
+                        <Typography className="link-text"><strong>{page}</strong></Typography>
+                      </ThemeProvider>
                     </Link>
                   ))}
                 </Box>
@@ -233,13 +238,6 @@ const NavBar = () => {
         </Drawer>
       </nav>
 
-      {/* {pages.map((page, index) => (
-        <Element name={page} className="element">
-          <ThemeProvider theme={theme}>
-            <Typography variant="h3">{page}</Typography>
-          </ThemeProvider>
-        </Element>
-      ))} */}
       {pages.map((page, index) => {
         if (index === 0)
           return <LandingPage name={page} className="element" theme={theme} pages={pages} />;
@@ -253,6 +251,7 @@ const NavBar = () => {
           );
         }
       })}
+      <BottomPage className="element" theme={theme} pages={pages} />
     </>
   );
 };
