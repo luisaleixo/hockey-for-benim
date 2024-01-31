@@ -9,6 +9,7 @@ import {
   animateScroll as scroll,
   scrollSpy,
 } from "react-scroll";
+import Testimony from "./Testimony";
 
 const LandingPage: React.FC<{
   name: string;
@@ -289,6 +290,7 @@ const LandingPage: React.FC<{
             </Box>
           </Box>
         </Box>
+        <Testimony theme={props.theme}/>
       </Element>
     </>
   );
