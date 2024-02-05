@@ -243,7 +243,7 @@ const NavBar = () => {
         if (index === 0)
           return <LandingPage name={page} className="element" theme={theme} pages={pages} />;
         else if (index === 2)
-          return <Team theme={theme} />
+          return <Team name={page} theme={theme} />
         else {
           return (
             <Element name={page} className="element">
