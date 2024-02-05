@@ -5,6 +5,7 @@ import {
   Element,
   animateScroll as scroll,
 } from "react-scroll";
+import TeamPortugal from "./TeamPortugal";
 
 const container = {
   display: "flex",
@@ -214,6 +215,7 @@ const Team: React.FC<{
             </Box>
           </Box>
         </Box>
+        <TeamPortugal name={props.name} theme={props.theme} />
       </Element>
     </>
   );
