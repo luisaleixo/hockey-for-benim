@@ -6,6 +6,7 @@ import {
   animateScroll as scroll,
 } from "react-scroll";
 import TeamPortugal from "./TeamPortugal";
+import TeamBenim from "./TeamBenim";
 
 const container = {
   display: "flex",
@@ -216,6 +217,7 @@ const Team: React.FC<{
           </Box>
         </Box>
         <TeamPortugal name={props.name} theme={props.theme} />
+        <TeamBenim name={props.name} theme={props.theme} />
       </Element>
     </>
   );

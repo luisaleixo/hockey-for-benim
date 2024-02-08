@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@emotion/react";
 import { Box, Divider, Theme, Typography } from "@mui/material";
 
-const TeamPortugal: React.FC<{
+const TeamBenim: React.FC<{
   theme: Theme;
   name: string;
 }> = (props) => {
@@ -19,8 +19,7 @@ const TeamPortugal: React.FC<{
     display: "flex",
     flex: "1 0 10%",  
     flexDirection: {lg: "column", xs: "row"}, 
-    alignItems: "center",
-    textAlign: "center",
+    alignItems: "center", 
     justifyContent: {lg: "space-around", xs: "flex-start"},
     paddingTop: {xs: "2%"}
   };
@@ -65,28 +64,53 @@ const TeamPortugal: React.FC<{
             sx={{
               textAlign: "center",
               alignItems: "center",
-              color: "rgba(0, 135, 81, 1)",
+              color: "rgba(232, 17, 45, 1)",
               fontWeight: "bold",
             }}
           >
             A NOSSA EQUIPA
           </Typography>
           <Divider
-            sx={{ borderWidth: "2px", borderColor: "rgba(0, 135, 81, 1)" }}
+            sx={{ borderWidth: "2px", borderColor: "rgba(232, 17, 45, 1)" }}
           />
           <Typography
             variant="h5"
             sx={{
               textAlign: "center",
               alignItems: "center",
-              color: "rgba(0, 135, 81, 1)",
+              color: "rgba(232, 17, 45, 1)",
               fontWeight: "bold",
             }}
           >
-            PORTUGAL
+            BENIM
           </Typography>
         </ThemeProvider>
         <Box sx={container}>
+          <Box sx={containerImage}>
+            <Box sx={containerItem}>
+              <div
+                style={Object.assign({}, imageBackgroundColor, {
+                  background: "rgba(0, 135, 81, 1)",
+                })}
+              >
+                <img
+                  src="team/benim/carlos.jpg"
+                  alt="Circular cropped image"
+                  style={imageStyle}
+                />
+              </div>
+              <Box sx={containerText}>
+                <ThemeProvider theme={props.theme}>
+                  <Typography>
+                    <strong>Carlos Prudent</strong>
+                  </Typography>
+                  <Typography>
+                    <strong>Treinador e jogador</strong>
+                  </Typography>
+                </ThemeProvider>
+              </Box>
+            </Box>
+          </Box>
           <Box sx={containerImage}>
             <Box sx={containerItem}>
               <div
@@ -95,7 +119,7 @@ const TeamPortugal: React.FC<{
                 })}
               >
                 <img
-                  src="team/portugal/Anabell.jpeg"
+                  src="team/benim/fredys.jpg"
                   alt="Circular cropped image"
                   style={imageStyle}
                 />
@@ -103,10 +127,10 @@ const TeamPortugal: React.FC<{
               <Box sx={containerText}>
                 <ThemeProvider theme={props.theme}>
                   <Typography>
-                    <strong>Anabell Suarez</strong>
+                    <strong>Fredys Igor</strong>
                   </Typography>
                   <Typography>
-                    <strong>Gestão de Logística</strong>
+                    <strong>Treinador e jogador</strong>
                   </Typography>
                 </ThemeProvider>
               </Box>
@@ -120,7 +144,7 @@ const TeamPortugal: React.FC<{
                 })}
               >
                 <img
-                  src="team/portugal/goncalo.png"
+                  src="team/benim/hermann.jpg"
                   alt="Circular cropped image"
                   style={imageStyle}
                 />
@@ -128,35 +152,10 @@ const TeamPortugal: React.FC<{
               <Box sx={containerText}>
                 <ThemeProvider theme={props.theme}>
                   <Typography>
-                    <strong>Gonçalo Alves</strong>
+                    <strong>Hermann Phiret</strong>
                   </Typography>
                   <Typography>
-                    <strong>Embaixador HFB</strong>
-                  </Typography>
-                </ThemeProvider>
-              </Box>
-            </Box>
-          </Box>
-          <Box sx={containerImage}>
-            <Box sx={containerItem}>
-              <div
-                style={Object.assign({}, imageBackgroundColor, {
-                  background: "rgba(0, 135, 81, 1)",
-                })}
-              >
-                <img
-                  src="team/portugal/marcia.jpeg"
-                  alt="Circular cropped image"
-                  style={imageStyle}
-                />
-              </div>
-              <Box sx={containerText}>
-                <ThemeProvider theme={props.theme}>
-                  <Typography>
-                    <strong>Márcia Bastos</strong>
-                  </Typography>
-                  <Typography>
-                    <strong>Gestão de redes socias</strong>
+                    <strong>Treinador e jogador</strong>
                   </Typography>
                 </ThemeProvider>
               </Box>
@@ -168,11 +167,11 @@ const TeamPortugal: React.FC<{
             <Box sx={containerItem}>
               <div
                 style={Object.assign({}, imageBackgroundColor, {
-                  background: "rgba(232, 17, 45, 1)",
+                  background: "rgba(252, 209, 22, 1)",
                 })}
               >
                 <img
-                  src="team/portugal/mariana.jpeg"
+                  src="team/benim/kouoam.png"
                   alt="Circular cropped image"
                   style={imageStyle}
                 />
@@ -180,10 +179,35 @@ const TeamPortugal: React.FC<{
               <Box sx={containerText}>
                 <ThemeProvider theme={props.theme}>
                   <Typography>
-                    <strong>Mariana Damásio</strong>
+                    <strong>Kouokam Kamtchueng</strong>
                   </Typography>
                   <Typography>
-                    <strong>Gestão do Website</strong>
+                    <strong>Diretor do Centro EYA</strong>
+                  </Typography>
+                </ThemeProvider>
+              </Box>
+            </Box>
+          </Box>
+          <Box sx={containerImage}>
+            <Box sx={containerItem}>
+              <div
+                style={Object.assign({}, imageBackgroundColor, {
+                  background: "rgba(232, 17, 45, 1)",
+                })}
+              >
+                <img
+                  src="team/benim/orax.jpg"
+                  alt="Circular cropped image"
+                  style={imageStyle}
+                />
+              </div>
+              <Box sx={containerText}>
+                <ThemeProvider theme={props.theme}>
+                  <Typography>
+                    <strong>Orax Rudlin</strong>
+                  </Typography>
+                  <Typography>
+                    <strong>Treinador e jogador</strong>
                   </Typography>
                 </ThemeProvider>
               </Box>
@@ -197,7 +221,7 @@ const TeamPortugal: React.FC<{
                 })}
               >
                 <img
-                  src="team/portugal/jorge.png"
+                  src="team/benim/samad.jpg"
                   alt="Circular cropped image"
                   style={imageStyle}
                 />
@@ -205,35 +229,10 @@ const TeamPortugal: React.FC<{
               <Box sx={containerText}>
                 <ThemeProvider theme={props.theme}>
                   <Typography>
-                    <strong>Jorge Mendes</strong>
+                    <strong>Samad ADJAHO</strong>
                   </Typography>
                   <Typography>
-                    <strong>Produção de conteúdos</strong>
-                  </Typography>
-                </ThemeProvider>
-              </Box>
-            </Box>
-          </Box>
-          <Box sx={containerImage}>
-            <Box sx={containerItem}>
-              <div
-                style={Object.assign({}, imageBackgroundColor, {
-                  background: "rgba(252, 209, 22, 1)",
-                })}
-              >
-                <img
-                  src="team/portugal/tomas.jpeg"
-                  alt="Circular cropped image"
-                  style={imageStyle}
-                />
-              </div>
-              <Box sx={containerText}>
-                <ThemeProvider theme={props.theme}>
-                  <Typography>
-                    <strong>Tomás Carreto</strong>
-                  </Typography>
-                  <Typography>
-                    <strong>Gestão de programas e projetos</strong>
+                    <strong>Treinador e jogador</strong>
                   </Typography>
                 </ThemeProvider>
               </Box>
@@ -245,4 +244,4 @@ const TeamPortugal: React.FC<{
   );
 };
 
-export default TeamPortugal;
+export default TeamBenim;
