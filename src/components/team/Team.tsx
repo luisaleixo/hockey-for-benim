@@ -7,6 +7,7 @@ import {
 } from "react-scroll";
 import TeamPortugal from "./TeamPortugal";
 import TeamBenim from "./TeamBenim";
+import JoinUs from "./JoinUs";
 
 const container = {
   display: "flex",
@@ -218,6 +219,7 @@ const Team: React.FC<{
         </Box>
         <TeamPortugal name={props.name} theme={props.theme} />
         <TeamBenim name={props.name} theme={props.theme} />
+        <JoinUs theme={props.theme} />
       </Element>
     </>
   );
