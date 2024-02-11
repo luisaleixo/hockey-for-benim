@@ -63,7 +63,7 @@ const Contacts: React.FC<{
             }}
           ></Box>
           <Box
-            sx={{ display: "flex", flex: "1 0 50%", background: "white" }}
+            sx={{ display: "flex", flex: {lg:"1 0 50%", xs: "1 0 10%"}, background: "white" }}
           ></Box>
         </Box>
         <Box sx={container}>
@@ -162,7 +162,7 @@ const Contacts: React.FC<{
             }}
           ></Box>
           <Box
-            sx={{ display: "flex", flex: "1 0 50%", background: "white" }}
+            sx={{ display: "flex", flex: {lg: "1 0 50%", xs: "1 0 10%"}, background: "white" }}
           ></Box>
         </Box>
       </Element>
