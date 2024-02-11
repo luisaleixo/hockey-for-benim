@@ -24,7 +24,7 @@ const Contacts: React.FC<{
     flexDirection: "row",
   };
   const container = {
-    height: "95vh",
+    height: {lg: "95vh", xs: "auto"},
     display: "flex",
     flexDirection: { lg: "row", xs: "column" },
   };
