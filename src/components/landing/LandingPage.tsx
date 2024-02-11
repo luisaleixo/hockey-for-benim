@@ -3,11 +3,7 @@ import { SxProps } from "@mui/system";
 import React from "react";
 import {
   Link,
-  Button as bt,
   Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
 } from "react-scroll";
 import Testimony from "./Testimony";
 

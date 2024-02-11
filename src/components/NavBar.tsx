@@ -29,6 +29,8 @@ import ListItemButton from "@mui/material/ListItemButton";
 import LandingPage from "./landing/LandingPage";
 import BottomPage from "./bottom/BottomPage";
 import Team from "./team/Team";
+import Volunteer from "./programas/Volunteer";
+import Gallery from "./gallery/Gallery";
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
@@ -242,8 +244,12 @@ const NavBar = () => {
       {pages.map((page, index) => {
         if (index === 0)
           return <LandingPage name={page} className="element" theme={theme} pages={pages} />;
+        else if (index === 1)
+          return <Volunteer name={page} theme={theme} />
         else if (index === 2)
           return <Team name={page} theme={theme} />
+        else if (index === 3)
+          return <Gallery name={page} theme={theme} />
         else {
           return (
             <Element name={page} className="element">

@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@emotion/react";
 import { Box, Theme, Typography } from "@mui/material";
-import { Button as bt, Element, animateScroll as scroll } from "react-scroll";
+import { Element } from "react-scroll";
 import TeamPortugal from "./TeamPortugal";
 import TeamBenim from "./TeamBenim";
 import JoinUs from "./JoinUs";

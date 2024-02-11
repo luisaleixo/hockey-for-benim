@@ -10,11 +10,7 @@ import {
 import React from "react";
 import {
   Link,
-  Button as bt,
   Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
 } from "react-scroll";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
