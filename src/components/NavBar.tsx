@@ -31,6 +31,7 @@ import BottomPage from "./bottom/BottomPage";
 import Team from "./team/Team";
 import Volunteer from "./programas/Volunteer";
 import Gallery from "./gallery/Gallery";
+import Contacts from "./contacts/Contacts";
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
@@ -250,15 +251,17 @@ const NavBar = () => {
           return <Team name={page} theme={theme} />
         else if (index === 3)
           return <Gallery name={page} theme={theme} />
-        else {
-          return (
-            <Element name={page} className="element">
-              <ThemeProvider theme={theme}>
-                <Typography variant="h3">{page}</Typography>
-              </ThemeProvider>
-            </Element>
-          );
-        }
+        else if (index === 5)
+          return <Contacts name={page} theme={theme} />
+        // else {
+        //   return (
+        //     <Element name={page} className="element">
+        //       <ThemeProvider theme={theme}>
+        //         <Typography variant="h3">{page}</Typography>
+        //       </ThemeProvider>
+        //     </Element>
+        //   );
+        // }
       })}
       <BottomPage className="element" theme={theme} pages={pages} />
     </>

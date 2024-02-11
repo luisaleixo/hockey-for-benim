@@ -1,11 +1,9 @@
 import { Box, Theme, ThemeProvider, Typography, Button } from "@mui/material";
 import { SxProps } from "@mui/system";
 import React from "react";
-import {
-  Link,
-  Element,
-} from "react-scroll";
+import { Link, Element } from "react-scroll";
 import Testimony from "./Testimony";
+import JoinCause from "./JoinCause";
 
 const LandingPage: React.FC<{
   name: string;
@@ -35,7 +33,7 @@ const LandingPage: React.FC<{
   const containerStyle = {
     display: "flex",
     flexDirection: { xs: "column", lg: "row" },
-    padding: { xs: "2% 10% 2% 10%", lg: "2% 15% 2% 15%" },
+    padding: { xs: "5%", lg: "2% 15%" },
   };
 
   const secondContainerStyle = {
@@ -44,7 +42,7 @@ const LandingPage: React.FC<{
     flexDirection: "column",
     alignItems: "center", // Center vertically
     justifyContent: "center", // Center horizontally
-    padding: { xs: "0 10% 0 10%", lg: "2% 15% 2% 15%" },
+    padding: { xs: "0 5%", lg: "2% 15%" },
   };
 
   const box1Style = {
@@ -69,43 +67,14 @@ const LandingPage: React.FC<{
     flex: "1 0 60%",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center", // Center horizontally
+    // alignItems: "center", // Center horizontally
     justifyContent: "center", // Center vertically
-    padding: { xs: "1% 0% 1% 0%", lg: "1% 0% 1% 10%" },
+    padding: { xs: "0%", lg: "1% 0% 1% 10%" },
   };
 
   const redText = { color: "red", fontWeight: "bold" };
   const greenText = { color: "green", fontWeight: "bold" };
   const yellowText = { color: "#ffbb00", fontWeight: "bold" };
-  const whiteText = { color: "white", fontWeight: "bold" };
-
-  const backgroundImageJuntaCausa = {
-    backgroundImage: `linear-gradient(rgba(232, 17, 45, 0.7), rgba(232, 17, 45, 0.7)), url(/home/causa.png)`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    height: "70vh", // Make the Box fill the entire screen height
-    width: "100%", // Make the Box fill the entire screen width
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "5% 0% 5% 0%", // Padding at the bottom
-  };
-
-  const boxCausaStyle = {
-    flex: "1 0 50%",
-    padding: "10% 0% 10% 0%",
-  };
-
-  const boxCausaFormStyle = {
-    flex: "1 0 50%",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center", // Center horizontally
-    justifyContent: "center", // Center vertically
-    padding: { xs: "1% 0% 1% 0%", lg: "1% 0% 1% 10%" },
-  };
 
   return (
     <>
@@ -164,7 +133,7 @@ const LandingPage: React.FC<{
             </ThemeProvider>
           </Box>
           <Box sx={box2Style}>
-            <img src="home/first.png" style={{ maxWidth: "100%" }} />
+            <img src="home/first_compressed.jpg" style={{maxWidth: "100%"}} />
           </Box>
         </Box>
         <Box sx={secondContainerStyle}>
@@ -174,7 +143,7 @@ const LandingPage: React.FC<{
                 variant="h4"
                 sx={{
                   fontWeight: "bold",
-                  padding: { xs: "5% 5% 0% 5%", lg: "1% 5% 0% 5%" },
+                  padding: { xs: "5% 0% 0% 0%", lg: "1% 5% 0% 5%" },
                   color: "white",
                   // textAlign: "center",
                 }}
@@ -189,7 +158,7 @@ const LandingPage: React.FC<{
                 variant="subtitle2"
                 sx={{
                   // fontWeight: "bold",
-                  padding: { xs: "5% 5% 5% 5%", lg: "1% 5% 0% 5%" },
+                  padding: { xs: "5% 0% 0% 0%", lg: "1% 5% 0% 5%" },
                   color: "white",
                   textAlign: "right",
                 }}
@@ -205,10 +174,10 @@ const LandingPage: React.FC<{
           </Box>
           <Box sx={boxObjectivesListStyle}>
             <ThemeProvider theme={props.theme}>
-              <Typography variant="h4">
-                <span style={greenText}>Os objetivos do nosso projeto:</span>
+              <Typography variant="h4" color="rgba(0, 135, 81, 1)">
+                <strong>Os objetivos do nosso projeto:</strong>
               </Typography>
-              <ul>
+              <ul style={{marginBottom: "0%"}}>
                 <Typography variant="h6">
                   <li>
                     Angariação de material específico de hóquei em patins,
@@ -236,57 +205,12 @@ const LandingPage: React.FC<{
                     Portugal.
                   </li>
                 </Typography>
-                <br />
               </ul>
             </ThemeProvider>
           </Box>
         </Box>
-        <Box sx={backgroundImageJuntaCausa}>
-          <Box sx={containerStyle}>
-            <Box sx={boxCausaStyle}>
-              <ThemeProvider theme={props.theme}>
-                <Typography variant="h4" sx={whiteText}>
-                  Junta-te à nossa causa!
-                </Typography>
-                <Typography
-                  variant="h6"
-                  style={{ textAlign: "justify", color: "white" }}
-                >
-                  <br />A nossa equipa está sempre de braços abertos a pessoas
-                  que queriam ajudar e a lutar pela nossa causa. O grande
-                  objetivo é entregar sonhos e levar a modalida que tanto
-                  gostamos ao Benim.
-                  <br />
-                  <br />
-                  Envia mensagem e descobre como podes ajudar!
-                </Typography>
-              </ThemeProvider>
-              <br />
-              <Box sx={{display: "flex", flexDirection: "row", alignItems: "flex-end"}}>
-                <img src="home/causa_text.jpg" style={{ maxWidth: "50%" }} />
-                <Box style={{marginLeft: "2%"}}>
-                  <br />
-                  <Link
-                    activeClass="active"
-                    to="Doações"
-                    spy={true}
-                    smooth={true}
-                    // offset={64}
-                    duration={1000}
-                    // onClick={handleDrawerToggle}
-                  >
-                    <Button variant="contained" color="error" size="large">
-                      <strong>DOAR AQUI!</strong>
-                    </Button>
-                  </Link>
-                </Box>
-              </Box>
-            </Box>
-            <Box sx={boxCausaFormStyle}>
-            </Box>
-          </Box>
-        </Box>
-        <Testimony theme={props.theme}/>
+       <JoinCause theme={props.theme} />
+        <Testimony theme={props.theme} />
       </Element>
     </>
   );

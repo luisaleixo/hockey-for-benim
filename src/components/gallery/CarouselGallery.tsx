@@ -34,6 +34,7 @@ const CarouselGallery: React.FC<{
   return (
     <>
       <Carousel
+        duration={2000}
         autoPlay={false}
         navButtonsAlwaysVisible={true}
         indicators={false}

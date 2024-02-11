@@ -8,7 +8,7 @@ const Volunteer: React.FC<{
 }> = (props) => {
   const container = {
     backgroundColor: "rgba(252, 209, 22, 0.8)",
-    minHeight: "50vh",
+    minHeight: {lg: "50vh", xs: "20vh"},
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -17,13 +17,15 @@ const Volunteer: React.FC<{
   const whyVolunteer = {
     width: "100%",
     padding: "5% 0",
+    flexDirection: {lg: "row", xs: "column"},
   };
 
   const insideWhyVolunter = {
     flex: "1",
     justifyContent: "center",
     alignSelf: "center",
-    padding: "0 10% 0 5%",
+    padding: {lg:"0 10% 0 5%", xs: "0% 5%"},
+    textAlign: "justify",
   };
 
   const summerProject = {
@@ -75,12 +77,12 @@ const Volunteer: React.FC<{
               sx={{
                 borderWidth: "2px",
                 borderColor: "rgba(0, 135, 81, 1)",
-                width: "50%",
+                width: {lg: "50%", xs: "80%"},
               }}
             />
             <br />
             <br />
-            <Box sx={{ width: "60%" }}>
+            <Box sx={{ width: {lg: "60%", xs: "100%"}, textAlign: "justify"}}>
               <Typography variant="h6" color="black">
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
                 diam nonummy nibh euismod tincidunt ut laoreet dolore magna

@@ -208,7 +208,7 @@ const BottomPage: React.FC<{
                       duration={1000}
                       // onClick={handleDrawerToggle}
                     >
-                      <Typography color="white">{page}</Typography>
+                      <Typography color="white" sx={{ '&:hover': { textDecoration: 'underline' } }}>{page}</Typography>
                     </Link>
                   </li>
                 ))}

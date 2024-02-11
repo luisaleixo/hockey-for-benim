@@ -95,7 +95,7 @@ const TeamPortugal: React.FC<{
                 })}
               >
                 <img
-                  src="team/portugal/Anabell.jpeg"
+                  src="team/portugal/Anabell.jpg"
                   alt="Circular cropped image"
                   style={imageStyle}
                 />
@@ -145,7 +145,7 @@ const TeamPortugal: React.FC<{
                 })}
               >
                 <img
-                  src="team/portugal/marcia.jpeg"
+                  src="team/portugal/marcia.jpg"
                   alt="Circular cropped image"
                   style={imageStyle}
                 />
@@ -172,7 +172,7 @@ const TeamPortugal: React.FC<{
                 })}
               >
                 <img
-                  src="team/portugal/mariana.jpeg"
+                  src="team/portugal/mariana.jpg"
                   alt="Circular cropped image"
                   style={imageStyle}
                 />
@@ -222,7 +222,7 @@ const TeamPortugal: React.FC<{
                 })}
               >
                 <img
-                  src="team/portugal/tomas.jpeg"
+                  src="team/portugal/tomas.jpg"
                   alt="Circular cropped image"
                   style={imageStyle}
                 />
