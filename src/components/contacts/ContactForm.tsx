@@ -7,13 +7,14 @@ const ContactForm: React.FC<{}> = () => {
 
   const sendEmail = (e: any) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
         process.env.EMAILJS_SERVICE_ID!,
         process.env.EMAILJS_TEMPLATE_ID!,
         formRef.current,
-        process.env.EMAILJS_USER_ID!
+        {
+          publicKey: process.env.EMAILJS_USER_ID!,
+        }
       )
       .then(
         () => {
@@ -41,12 +42,7 @@ const ContactForm: React.FC<{}> = () => {
           <br />
           <textarea name="message" placeholder="Mensagem" />
           <br />
-          <Button
-            variant="contained"
-            color="error"
-            size="large"
-            type="submit"
-          >
+          <Button variant="contained" color="error" size="large" type="submit">
             <strong>Enviar</strong>
           </Button>
         </FormControl>
