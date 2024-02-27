@@ -1,63 +1,20 @@
 import { ThemeProvider } from "@emotion/react";
 import {
   Box,
-  Button,
-  FormControl,
   IconButton,
   Stack,
   Theme,
   Typography,
 } from "@mui/material";
 import { Element } from "react-scroll";
-import FormTextField from "../landing/FormTextField";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { useState } from "react";
+import ContactForm from "./ContactForm";
 
 const Contacts: React.FC<{
   theme: Theme;
   name: string;
 }> = (props) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phoneNumber: "",
-    message: "",
-  });
-
-  const handleChange = (e: any) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-
-    const response = await fetch("https://hockey-for-benim-mail.vercel.app/api/sendMail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-API-KEY": "jqyk zwfr obuo eczn",
-      },
-      body: JSON.stringify({
-        to: "luis.aleixo97@hotmail.com",
-        from: "general.hockeyforbenim@gmail.com",
-        subject: "New Message from Contact Form",
-        html: `<h1>Name:</h1> ${formData.name}<br/>`
-      }),
-    });
-
-    if (response.ok) {
-      // Request was successful
-      console.log("Email sent successfully");
-    } else {
-      // Request failed
-      console.error("Error sending email");
-    }
-  };
 
   const topContainer = {
     height: "10vh",
@@ -176,42 +133,7 @@ const Contacts: React.FC<{
                   <strong>QUERES AJUDAR?</strong>
                 </Typography>
                 <br />
-                <FormControl fullWidth>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Nome"
-                  />
-                  <br />
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Email"
-                  />
-                  <br />
-                  <input
-                    type="tel"
-                    name="phoneNumber"
-                    value={formData.phoneNumber}
-                    onChange={handleChange}
-                    placeholder="Contacto Telefonico"
-                  />
-                  <br />
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Mensagem"
-                  />
-                  <br />
-                  <Button variant="contained" color="error" size="large" onClick={handleSubmit}>
-                    <strong>Enviar</strong>
-                  </Button>
-                </FormControl>
+                <ContactForm />
               </ThemeProvider>
             </Stack>
           </Box>
