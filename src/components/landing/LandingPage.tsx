@@ -12,22 +12,23 @@ const LandingPage: React.FC<{
   pages: Array<string>;
 }> = (props) => {
   const backgroundImageStyle = {
-    backgroundImage: `url(/home/landing.png)`, // Adjust the path to your image accordingly
+    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(/home/landing.png)`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    height: "70vh", // Make the Box fill the entire screen height
+    height: "60vh", // Make the Box fill the entire screen height
     width: "100%", // Make the Box fill the entire screen width
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-end",
-    paddingBottom: "5%", // Padding at the bottom
+    paddingBottom: "10%", // Padding at the bottom
   };
 
   const linkContainerStyle: SxProps = {
     display: "flex",
     justifyContent: "center",
-    gap: "5vw", // Adjust the gap as needed
+    gap: "10vw",
+    marginTop: "5%",
   };
 
   const containerStyle = {
@@ -80,6 +81,13 @@ const LandingPage: React.FC<{
     <>
       <Element name={props.name}>
         <Box sx={backgroundImageStyle}>
+          <Box>
+            <Typography variant="h3" sx={{ fontWeight: "bold", textAlign: "center", textShadow: "1px 1px white"}}>
+              BEM-VINDOS AO <span style={redText}>HOCKEY</span>{" "}
+              <span style={greenText}>FOR</span>{" "}
+              <span style={yellowText}>BENIM</span>
+            </Typography>
+          </Box>
           <Box sx={linkContainerStyle}>
             <Link
               activeClass="active"
@@ -112,8 +120,8 @@ const LandingPage: React.FC<{
         <Box sx={containerStyle}>
           <Box sx={box1Style}>
             <ThemeProvider theme={props.theme}>
-              <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-                Bem-vindos ao Hockey for Benim
+              <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+                WHO WE ARE
               </Typography>
             </ThemeProvider>
             <br />
@@ -133,7 +141,7 @@ const LandingPage: React.FC<{
             </ThemeProvider>
           </Box>
           <Box sx={box2Style}>
-            <img src="home/first_compressed.jpg" style={{maxWidth: "100%"}} />
+            <img src="home/first_compressed.jpg" style={{ maxWidth: "100%" }} />
           </Box>
         </Box>
         <Box sx={secondContainerStyle}>
@@ -177,7 +185,7 @@ const LandingPage: React.FC<{
               <Typography variant="h4" color="rgba(0, 135, 81, 1)">
                 <strong>Os objetivos do nosso projeto:</strong>
               </Typography>
-              <ul style={{marginBottom: "0%"}}>
+              <ul style={{ marginBottom: "0%" }}>
                 <Typography variant="h6">
                   <li>
                     Angariação de material específico de hóquei em patins,
@@ -209,7 +217,7 @@ const LandingPage: React.FC<{
             </ThemeProvider>
           </Box>
         </Box>
-       <JoinCause theme={props.theme} />
+        <JoinCause theme={props.theme} />
         <Testimony theme={props.theme} />
       </Element>
     </>

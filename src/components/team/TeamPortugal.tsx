@@ -239,6 +239,31 @@ const TeamPortugal: React.FC<{
               </Box>
             </Box>
           </Box>
+          <Box sx={containerImage}>
+            <Box sx={containerItem}>
+              <div
+                style={Object.assign({}, imageBackgroundColor, {
+                  background: "rgba(232, 17, 45, 1)",
+                })}
+              >
+                <img
+                  src="team/portugal/luis.png"
+                  alt="Circular cropped image"
+                  style={imageStyle}
+                />
+              </div>
+              <Box sx={containerText}>
+                <ThemeProvider theme={props.theme}>
+                  <Typography>
+                    <strong>Luis Aleixo</strong>
+                  </Typography>
+                  <Typography>
+                    <strong>Engenheiro do Website</strong>
+                  </Typography>
+                </ThemeProvider>
+              </Box>
+            </Box>
+          </Box>
         </Box>
       </Box>
     </>

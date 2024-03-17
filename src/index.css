@@ -12,11 +12,15 @@ code {
     monospace;
 }
 
-custom-link {
+.custom-link {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
 }
+
+.custom-link:hover {
+  color: white; 
+  text-decoration: underline;}
 
 .link-text {
   color: rgba(255, 255, 255, 0.7);

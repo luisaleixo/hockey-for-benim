@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { Link } from "react-scroll";
 import FormTextField from "./FormTextField";
+import ContactForm from "../contacts/ContactForm";
 
 const JoinCause: React.FC<{
   theme: Theme;
@@ -26,7 +27,6 @@ const JoinCause: React.FC<{
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    height: "70vh", // Make the Box fill the entire screen height
     width: "100%", // Make the Box fill the entire screen width
     display: "flex",
     flexDirection: "column",
@@ -46,7 +46,7 @@ const JoinCause: React.FC<{
     display: "flex",
     flexDirection: "column",
     alignItems: "center", // Center horizontally
-    // textAlign: "center", // Center vertically
+    alignSelf: "center", // Center vertically
     padding: { xs: "1% 0% 1% 0%", lg: "10% 0%" },
   };
 
@@ -99,23 +99,22 @@ const JoinCause: React.FC<{
             </Box>
           </Box>
           <Box sx={boxCausaFormStyle}>
-            {/* <Stack direction="column" sx={{ border: "2px solid white", width: "80%", height: "100%", padding: "5%", justifyContent: "space-between" }}>
+            <Stack
+              direction="column"
+              sx={{
+                border: "2px solid white",
+                width: "80%",
+                padding: "5%",
+                justifyContent: "space-between",
+              }}
+            >
               <ThemeProvider theme={props.theme}>
                 <Typography variant="h4" color="white" textAlign="center">
                   <strong>QUERES AJUDAR?</strong>
                 </Typography>
-                <br />
-                <FormControl fullWidth>
-                  <FormTextField label="Nome" multiline={false}/><br/>
-                  <FormTextField label="Email" multiline={false}/><br/>
-                  <FormTextField label="Contacto Telefonico" multiline={false}/><br/>
-                  <FormTextField label="Mensagem" multiline={true}/><br />
-                  <Button variant="contained" color="error" size="large">
-                    <strong>Enviar</strong>
-                  </Button>
-                </FormControl>
+                <ContactForm />
               </ThemeProvider>
-            </Stack> */}
+            </Stack>
           </Box>
         </Box>
       </Box>

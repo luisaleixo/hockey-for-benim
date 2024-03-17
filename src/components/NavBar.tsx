@@ -32,6 +32,7 @@ import Team from "./team/Team";
 import Volunteer from "./programas/Volunteer";
 import Gallery from "./gallery/Gallery";
 import Contacts from "./contacts/Contacts";
+import Donations from "./donations/Donations";
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
@@ -106,6 +107,8 @@ const NavBar = () => {
     background:
       "linear-gradient(180deg, #0C5F3E 0%, #008751 27.6%, #008751 100%)",
   };
+
+  const [hoveredItem, setHoveredItem] = React.useState<string | null>(null);
 
   return (
     <>
@@ -251,6 +254,8 @@ const NavBar = () => {
           return <Team name={page} theme={theme} />
         else if (index === 3)
           return <Gallery name={page} theme={theme} />
+        else if (index === 4)
+          return <Donations name={page} theme={theme} pages={pages}/>
         else if (index === 5)
           return <Contacts name={page} theme={theme} />
         // else {
