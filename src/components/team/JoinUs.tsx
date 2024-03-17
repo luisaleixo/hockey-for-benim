@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@emotion/react";
 import { Box, Button, Theme, Typography } from "@mui/material";
 import React from "react";
+import { Link } from "react-scroll";
 
 const JoinUs: React.FC<{
   theme: Theme;
@@ -44,9 +45,19 @@ const JoinUs: React.FC<{
           </Typography>
           <br />
         </ThemeProvider>
-        <Button sx={yellowButton} size="large">
-          <strong>FALA CONNOSCO</strong>
-        </Button>
+        <Link
+          activeClass="active"
+          to="Contactos"
+          spy={true}
+          smooth={true}
+          // offset={64}
+          duration={1000}
+          // onClick={handleDrawerToggle}
+        >
+          <Button sx={yellowButton} size="large">
+            <strong>FALA CONNOSCO</strong>
+          </Button>
+        </Link>
       </Box>
     </Box>
   );
