@@ -18,19 +18,16 @@ const Donations: React.FC<{
 
   const container = {
     padding: "2% 15% 2% 15%",
-    height: "60vh",
-    // background: `linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 30%, #FCD116 30%)`,
-    background: "#FCD116",
+    minHeight: "30vh",
+    background: `linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 30%, #fdda59 30%)`,
     display: "flex",
     flexDirection: {sx: "column", lg: "row"},
-    alignItems: "center",
+    alignItems: "end",
     justifyContent: "flex-start",
   };
 
   const imageStyle = {
     maxWidth: "100%",
-    maxHeight: "100%",
-    height: "auto",
   };
 
   const greenText = { color: "green", fontWeight: "bold" };

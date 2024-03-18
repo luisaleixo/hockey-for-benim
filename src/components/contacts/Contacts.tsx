@@ -18,7 +18,6 @@ const Contacts: React.FC<{
 
   const topContainer = {
     height: "10vh",
-    width: "100vw",
     display: "flex",
     flexDirection: "row",
   };

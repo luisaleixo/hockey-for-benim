@@ -42,6 +42,7 @@ const JoinCause: React.FC<{
   };
 
   const boxCausaFormStyle = {
+    width: { xs: '90%'},
     flex: "1 0 50%",
     display: "flex",
     flexDirection: "column",
