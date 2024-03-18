@@ -1,9 +1,12 @@
-import { Button, FormControl } from "@mui/material";
-import { useRef } from "react";
+import { Alert, Button, FormControl } from "@mui/material";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Snackbar from '@mui/material/Snackbar';
 
 const ContactForm: React.FC<{}> = () => {
   const formRef: any = useRef();
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -19,11 +22,16 @@ const ContactForm: React.FC<{}> = () => {
       .then(
         () => {
           console.log("SUCCESS... email has been sent!");
+          setSnackbarOpen(true);
         },
         (error) => {
           console.log(`FAILED...error: ${error.text}`, error.text);
         }
       );
+  };
+
+  const handleCloseSnackbar = () => {
+    setSnackbarOpen(false); // Close the snackbar
   };
 
   return (
