@@ -1,12 +1,11 @@
 import { Alert, Button, FormControl } from "@mui/material";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import Snackbar from '@mui/material/Snackbar';
+import Snackbar from "@mui/material/Snackbar";
 
 const ContactForm: React.FC<{}> = () => {
   const formRef: any = useRef();
   const [snackbarOpen, setSnackbarOpen] = useState(false);
-
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -55,6 +54,16 @@ const ContactForm: React.FC<{}> = () => {
           </Button>
         </FormControl>
       </form>
+      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleCloseSnackbar}>
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity="success"
+          variant="filled"
+          sx={{ width: "100%" }}
+        >
+          Email enviado!
+        </Alert>
+      </Snackbar>
     </>
   );
 };
