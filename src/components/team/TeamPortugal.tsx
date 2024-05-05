@@ -27,7 +27,7 @@ const TeamPortugal: React.FC<{
 
   const containerImage = {
     display: "flex",
-    flex: {xs: "1 0 30%"},  
+    flex: {xs: "1 0 25%"},  
     alignItems: "center",
   };
 

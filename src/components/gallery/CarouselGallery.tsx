@@ -8,9 +8,9 @@ interface ImageItem {
 
 const Item: React.FC<{ items: ImageItem[] }> = ({ items }) => {
   const imgStyle: React.CSSProperties = {
-    width: "100%", // Occupy full width of the slot
-    height: "100%", // Occupy full height of the slot
-    objectFit: "cover", // Maintain aspect ratio and cover the entire slot
+    maxWidth: "100%",
+    maxHeight: "100%",
+    objectFit: "cover",
   };
 
   return (

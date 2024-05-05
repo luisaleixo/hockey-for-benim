@@ -38,7 +38,7 @@ const Team: React.FC<{
         <Box sx={container}>
           <Box sx={sub_container}>
             <Box sx={sub_sub_container}>
-              <img src="team/team.jpg" style={{ maxWidth: "100%" }} />
+              <img src="team/pedro_cut_2.png" style={{ maxWidth: "100%" }} />
             </Box>
             <Box
               sx={{
@@ -53,11 +53,11 @@ const Team: React.FC<{
                   display: "flex",
                   flexDirection: "column",
                   flex: "1 0 30%",
-                  padding: { lg: "0 5% 5% 5%", xs: "5%" },
+                  padding: "5%",
                 }}
               >
                 <ThemeProvider theme={props.theme}>
-                  <Typography variant="h3" sx={white_text}>
+                  <Typography variant="h4" sx={white_text}>
                     PEDRO GONÇALVES | Co-fundador
                   </Typography>
                   <br />
@@ -104,11 +104,11 @@ const Team: React.FC<{
                   display: "flex",
                   flexDirection: "column",
                   flex: "1 0 30%",
-                  padding: { lg: "0 5% 5% 5%", xs: "5%" },
+                  padding: "5%",
                 }}
               >
                 <ThemeProvider theme={props.theme}>
-                  <Typography variant="h3" sx={white_text}>
+                  <Typography variant="h4" sx={white_text}>
                     RICARDO LOPES | Co-fundador
                   </Typography>
                   <br />
@@ -148,7 +148,7 @@ const Team: React.FC<{
               </Box>
             </Box>
             <Box sx={sub_sub_container}>
-              <img src="team/ricardo_cut.jpg" style={{ maxWidth: "100%" }} />
+              <img src="team/ricardo_cut_2.png" style={{ maxWidth: "100%" }} />
             </Box>
             {/* <Box
               sx={{

@@ -8,10 +8,7 @@ import {
 } from "@mui/material";
 
 import React from "react";
-import {
-  Link,
-  Element,
-} from "react-scroll";
+import { Link, Element } from "react-scroll";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
@@ -208,7 +205,12 @@ const BottomPage: React.FC<{
                       duration={1000}
                       // onClick={handleDrawerToggle}
                     >
-                      <Typography color="white" sx={{ '&:hover': { textDecoration: 'underline' } }}>{page}</Typography>
+                      <Typography
+                        color="white"
+                        sx={{ "&:hover": { textDecoration: "underline" } }}
+                      >
+                        {page}
+                      </Typography>
                     </Link>
                   </li>
                 ))}
@@ -222,9 +224,19 @@ const BottomPage: React.FC<{
               </Typography>
             </ThemeProvider>
             <br />
-            <Button variant="contained" color="error">
-              <strong>Let's talk!</strong>
-            </Button>
+            <Link
+              activeClass="active"
+              to="Contactos"
+              spy={true}
+              smooth={true}
+              // offset={64}
+              duration={1000}
+              // onClick={handleDrawerToggle}
+            >
+              <Button variant="contained" color="error">
+                <strong>Let's talk!</strong>
+              </Button>
+            </Link>
           </Box>
         </Box>
       </Element>

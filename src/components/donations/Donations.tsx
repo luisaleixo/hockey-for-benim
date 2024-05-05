@@ -1,14 +1,13 @@
 import {
   Box,
+  Button,
   Theme,
   ThemeProvider,
   Typography,
-  Button,
-  IconButton,
 } from "@mui/material";
 
 import React from "react";
-import { Link, Element } from "react-scroll";
+import { Element } from "react-scroll";
 
 const Donations: React.FC<{
   theme: Theme;
@@ -16,18 +15,25 @@ const Donations: React.FC<{
   name: string;
 }> = (props) => {
 
+  const whiteContainer = {
+    paddingTop: "2%",
+    background: "white",
+    height: "50px",
+  };
+
   const container = {
-    padding: "2% 15% 2% 15%",
-    minHeight: "30vh",
-    background: `linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 30%, #fdda59 30%)`,
+    padding: "2% 15%",
+    minHeight: "20vh",
+    background: "#fdda59",
     display: "flex",
-    flexDirection: {sx: "column", lg: "row"},
+    flexDirection: { sx: "column", lg: "row" },
     alignItems: "end",
-    justifyContent: "flex-start",
+    justifyContent: "center",
   };
 
   const imageStyle = {
-    maxWidth: "100%",
+    display: "flex",
+    maxWidth: "50%",
   };
 
   const greenText = { color: "green", fontWeight: "bold" };
@@ -54,23 +60,28 @@ const Donations: React.FC<{
   return (
     <>
       <Element name={props.name}>
-          <Box sx={container}>
-            <Box sx={{maxWidth: "20%"}}><img src="donations/player.png" style={imageStyle} /></Box><br/><br/>
+        <Box sx={whiteContainer} />
+        <Box sx={container}>
+          <Box sx={{ width: "40%", left: "15%", position: "absolute"}}>
+            <img src="donations/player_cut.png" style={imageStyle} />
+          </Box>
+          <Box textAlign="center">
             <ThemeProvider theme={props.theme}>
               <Typography
-                variant="h3"
+                variant="h2"
                 color="white"
                 sx={{ fontWeight: "bold" }}
               >
                 THEY <span style={greenText}>NEED</span> <br />
-                <span style={greenText}>YOUR</span> HELP <br />
-                <a href={goFundMeLink} style={buttonStyle}></a>
+                <span style={greenText}>YOUR</span> HELP! <br />
               </Typography>
+              <br /><br />
+              <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+                <span style={greenText}>FAÇA A SUA DOAÇÃO AQUI</span>
+              </Typography><br /><br />
+              <Button sx={{textAlign: "-webkit-center"}}><a href={goFundMeLink} style={buttonStyle}></a></Button>
             </ThemeProvider>
-            <Box>
-            
           </Box>
-          
         </Box>
       </Element>
     </>
