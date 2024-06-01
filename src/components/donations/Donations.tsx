@@ -15,12 +15,6 @@ const Donations: React.FC<{
   name: string;
 }> = (props) => {
 
-  const whiteContainer = {
-    paddingTop: "2%",
-    background: "white",
-    height: "50px",
-  };
-
   const container = {
     padding: "2% 15%",
     minHeight: "20vh",
@@ -32,8 +26,8 @@ const Donations: React.FC<{
   };
 
   const imageStyle = {
-    display: "flex",
-    maxWidth: "50%",
+    maxWidth: "100%",
+    maxHeight: "100%",
   };
 
   const greenText = { color: "green", fontWeight: "bold" };
@@ -60,11 +54,12 @@ const Donations: React.FC<{
   return (
     <>
       <Element name={props.name}>
-        <Box sx={whiteContainer} />
-        <Box sx={container}>
-          <Box sx={{ width: "40%", left: "15%", position: "absolute"}}>
+        <Box sx={container} flexDirection="row">
+          {/* <Box sx={{ width: "40%", left: "15%", position: "absolute"}}> */}
+          <Box maxWidth={"20%"}>
             <img src="donations/player_cut.png" style={imageStyle} />
           </Box>
+          {/* </Box> */}
           <Box textAlign="center">
             <ThemeProvider theme={props.theme}>
               <Typography
