@@ -65,8 +65,8 @@ const JoinCause: React.FC<{
                 style={{ textAlign: "justify", color: "white" }}
               >
                 <br />A nossa equipa está sempre de braços abertos a pessoas que
-                queriam ajudar e a lutar pela nossa causa. O grande objetivo é
-                entregar sonhos e levar a modalida que tanto gostamos ao Benim.
+                queiram ajudar e a lutar pela nossa causa. O grande objetivo é
+                entregar sonhos e levar a modalidade que tanto gostamos ao Benim.
                 <br />
                 <br />
                 Envia mensagem e descobre como podes ajudar!

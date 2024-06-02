@@ -78,11 +78,13 @@ const Team: React.FC<{
                     Escrever é, lá está, uma das suas paixões. Não perdoa um
                     erro ortográfico a ninguém. Vive apaixonado pela língua
                     portuguesa, por música, por desporto, por cinema, pelo seu
-                    cão e por boa comida. Recentemente abriu-se ao mundo do
-                    voluntariado. <br />
-                    Foi ao Benim, fundou o projecto Hockey For Benim e entrou na
-                    equipa do Movimento Transformers, que se dedica ao ensino
+                    cão e por boa comida. <br />
+                    <br />
+                    Recentemente abriu-se ao mundo do
+                    voluntariado. Foi ao Benim, fundou o projecto Hockey For Benim 
+                    e entrou na equipa do Movimento Transformers, que se dedica ao ensino
                     não convencional de crianças desfavorecidas. <br />
+                    <br />
                     Tudo aquilo em que ele mexe, mexe também. Dinâmica,
                     pró-actividade e pragmatismo são as suas palavras de ordem.
                   </Typography>
@@ -118,27 +120,27 @@ const Team: React.FC<{
                     projecto que hoje toda a gente reconhece.
                     <br />
                     <br />
-                    Jogou hóquei-em-patins mais de 20 anos e concretizou o sonho
+                    Jogou hóquei em patins mais de 20 anos e concretizou o sonho
                     de jogar na 1ª Divisão com o “seu” Parede FC.
                     <br />
                     <br />
                     Demitiu-se duas vezes para viajar pelo mundo. Na primeira
                     ocasião demorou 5 meses a percorrer 7 países, com um
-                    orçamento de apenas 5000 €. Em Março vai voltar a repetir a
+                    orçamento de apenas 5000 €. Em Março de 2024 irá voltar a repetir a
                     brincadeira. A primeira paragem é Singapura e, depois, logo
                     se vê… A sua boa energia impede-o de pensar de forma
-                    preventiva.
-                    <br />
+                    preventiva.<br />
                     <br />
                     Há quem lhe chame “puro sangue”, porque quando entra numa
                     coisa à qual gosta de se dedicar, consegue causar impacto em
-                    todas as direcções.
-                    <br />
+                    todas as direcções.<br />
                     <br />
                     Formou-se em Biologia e os animais marinhos eram a sua
                     grande paixão. Ainda são, mas o marketing assaltou-lhe as
                     sinapses e o coração e foi nessa área que se especializou
-                    mais recentemente. Apaixonado pela vida, por novas
+                    mais recentemente.<br />
+                    <br />
+                    Apaixonado pela vida, por novas
                     experiências, por proporcionar bons momentos e, claro,
                     vivê-los… Afinal de contas, ainda hoje gosta de usar o seu
                     boné para trás, calçar os seus vans e sacar uns “grinds” no

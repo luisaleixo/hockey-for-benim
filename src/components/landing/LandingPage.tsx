@@ -132,9 +132,9 @@ const LandingPage: React.FC<{
                 <span style={yellowText}>Benim</span>” destina-se a apoiar, a
                 longo-prazo, o desenvolvimento da modalidade de hóquei em patins
                 em Cotonou, cidade portuária no Benim, África. <br /><br />
-                Nesta cidade existe uma cumonidade de cerca de 200 crianças, com
+                Nesta cidade existe uma comunidade de cerca de 200 crianças, com
                 idades entre os 8 e os 13 anos, carenciadas em termos
-                socio-económicos, que encontram no hóqeui em patins a energia e
+                socio-económicos, que encontram no hóquei em patins a energia e
                 a motivação para superarem os obstáculos que todos os dias
                 enfrentam.
               </Typography>
@@ -189,7 +189,7 @@ const LandingPage: React.FC<{
                 <Typography variant="h6">
                   <li>
                     Angariação de material específico de hóquei em patins,
-                    indumentária, medicamentos, alimentos e fundos.
+                    indumentária, medicamentos e fundos.
                   </li>
                 </Typography>
                 <br />
