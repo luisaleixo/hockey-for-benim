@@ -258,7 +258,7 @@ const TeamPortugal: React.FC<{
                     <strong>Luis Aleixo</strong>
                   </Typography>
                   <Typography>
-                    <strong>Engenheiro do Website</strong>
+                    <strong>Programador do Website</strong>
                   </Typography>
                 </ThemeProvider>
               </Box>
