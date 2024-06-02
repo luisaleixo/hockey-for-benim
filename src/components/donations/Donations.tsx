@@ -1,6 +1,12 @@
 import {
   Box,
   Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Stack,
   Theme,
   ThemeProvider,
   Typography,
@@ -30,6 +36,10 @@ const Donations: React.FC<{
     maxHeight: "100%",
   };
 
+  const mbWayImageStyle = {
+    maxWidth: "4rem"
+  };
+
   const greenText = { color: "green", fontWeight: "bold" };
 
   const goFundMeLink =
@@ -51,9 +61,20 @@ const Donations: React.FC<{
     height: "30px",
   };
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <Element name={props.name}>
+        <Box style={{background: "white", height: "10vh"}}></Box>
         <Box sx={container} flexDirection="row">
           {/* <Box sx={{ width: "40%", left: "15%", position: "absolute"}}> */}
           <Box maxWidth={"20%"}>
@@ -74,12 +95,39 @@ const Donations: React.FC<{
               <Typography variant="h5" sx={{ fontWeight: "bold" }}>
                 <span style={greenText}>FAÇA A SUA DOAÇÃO AQUI</span>
               </Typography><br /><br />
-              <Button sx={{textAlign: "-webkit-center"}}><a href={goFundMeLink} style={buttonStyle}></a></Button>
+              <Button sx={{textAlign: "-webkit-center"}}><a  href={goFundMeLink} style={{...buttonStyle, backgroundImage: `url("donations/gofundme.png")`}}></a></Button>
+              <Button sx={{textAlign: "-webkit-center"}} onClick={handleClickOpen}><a style={{...buttonStyle, backgroundImage: `url("donations/mbway.png")`}}></a></Button>
             </ThemeProvider>
           </Box>
         </Box>
+
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">
+            <Stack direction="row">
+              {"Fazer doação por "}
+              <img style={mbWayImageStyle} src="/donations/mbway.png"/>
+              </Stack>
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">                
+            <Typography>
+              Queres fazer uma doação por <strong>MB WAY?</strong> <br />
+              Envia um email para <a href="mailto:hockeyforbenim@gmail.com">hockeyforbenim@gmail.com</a> e sabe como!
+            </Typography>
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Fechar</Button>
+          </DialogActions>
+        </Dialog>
       </Element>
     </>
+
   );
 };
 

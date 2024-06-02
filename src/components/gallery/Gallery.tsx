@@ -28,7 +28,7 @@ const Gallery: React.FC<{
     <Stack direction="row" key={rowIndex}> 
     {/* sx={{ width: "100%", height: "100%" }}  */}
       {row.map((width, imgIndex) => (
-        <Box key={imgIndex} sx={{borderRight: "black 5px solid"}}>
+        <Box key={imgIndex} sx={{borderRight: imgIndex < row.length - 1 ? "black 5px solid" : "none"}}>
           <img
             src={`gallery/row_${rowIndex+1}/${imgIndex+1}.jpg`}
             style={imgStyle}

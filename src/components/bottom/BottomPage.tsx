@@ -184,7 +184,7 @@ const BottomPage: React.FC<{
               </Typography>
               <br />
               <Typography variant="subtitle2" color="white">
-                <strong>hockeyforbenim@gmail.com</strong>
+                <strong><a href="mailto:hockeyforbenim@gmail.com">hockeyforbenim@gmail.com</a></strong>
               </Typography>
             </ThemeProvider>
           </Box>

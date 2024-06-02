@@ -77,7 +77,7 @@ const Contacts: React.FC<{
                     <strong>Contactos</strong>
                   </Typography>
                   <Typography variant="h6" color="white">
-                    hockeyforbenim@gmail.com
+                    <a href="mailto:hockeyforbenim@gmail.com">hockeyforbenim@gmail.com</a>
                   </Typography>
                 </Box>
                 <Box>
@@ -102,10 +102,10 @@ const Contacts: React.FC<{
                 </Box>
                 <Box>
                   <Typography variant="h6" color="white">
-                    <strong>Formulario</strong>
+                    <strong>Formulário</strong>
                   </Typography>
                   <Typography variant="h6" color="white">
-                    Contacta-nos através do from nesta página.
+                    Contacta-nos através do form nesta página.
                   </Typography>
                 </Box>
               </ThemeProvider>
